@@ -109,10 +109,17 @@ const AsyncFilter = () => {
 const App = () => {
   return (
     <div style={{ padding: 40 }}>
+      <h1>Basic Usage</h1>
       <BasicUsage />
       <br />
+      <h1>With List</h1>
       <WithArray />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1>Custom Async Filter</h1>
       <AsyncFilter />
 
     </div>

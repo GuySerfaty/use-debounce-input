@@ -4,7 +4,10 @@
   "description": "Hook for debounce inputs and filtering arrays with debounce for react",
   "author": "GuySerfaty",
   "license": "MIT",
-  "repository": "GuySerfaty/use-debounce-input",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuySerfaty/use-debounce-input.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -17,7 +20,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "npm run build",
+    "prepack": "npm run-script build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
@@ -47,5 +50,12 @@
     "rollup-plugin-typescript2": "^0.19.2",
     "rollup-plugin-url": "^2.1.0",
     "typescript": "^3.2.4"
+  },
+  "bugs": {
+    "url": "https://github.com/GuySerfaty/use-debounce-input/issues"
+  },
+  "homepage": "https://github.com/GuySerfaty/use-debounce-input#readme",
+  "directories": {
+    "example": "example"
   }
 }

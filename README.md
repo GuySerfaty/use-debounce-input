@@ -10,6 +10,8 @@
 npm install --save use-debounce-input
 ```
 
+
+![](example/basicusage.gif)![](example/withlist.gif)![](example/customasyncfilter.gif)
 ## Basic Usage
 
 ```tsx
