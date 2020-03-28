@@ -1,0 +1,27 @@
+{
+  "name": "use-debounce-input-example",
+  "homepage": "https://GuySerfaty.github.io/use-debounce-input",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "faker": "^4.1.0",
+    "react": "file:../node_modules/react",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.0.1",
+    "styled-components": "^5.0.1",
+    "use-debounce-input": "file:.."
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
