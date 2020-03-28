@@ -11,7 +11,7 @@ npm install --save use-debounce-input
 ```
 
 
-![](example/basicusage.gif)![](example/withlist.gif)![](example/customasyncfilter.gif)
+![](example/basicusage.gif)
 ## Basic Usage
 
 ```tsx
@@ -39,6 +39,7 @@ const BasicUsage = () => {
 }
 ```
 
+![](example/withlist.gif)
 ## Basic Usage With Array
 Sometimes you need the input to filter a list by specific properties, in that case you can provide `items` option and `filterByColumns` and then to use `filteredItems`. 
 Remember to useMemo in case the creation of the array is inside the component that use the hook
@@ -87,6 +88,7 @@ const WithArray = () => {
 }
 ```
 
+![](example/customasyncfilter.gif)
 ## Custom Filter
 For custom filtering you can use `filter` option. The function will get (debounceValue, items, filterByColumns) params and should return newArray of filtered items. the function can be async function
 
