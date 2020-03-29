@@ -1,6 +1,6 @@
 {
   "name": "use-debounce-input",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Hook for debounce inputs and filtering arrays with debounce for react",
   "author": "GuySerfaty",
   "license": "MIT",

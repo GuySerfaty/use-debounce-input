@@ -1,13 +1,11 @@
-import React, {
-  useState, useEffect, useMemo, useCallback,
-} from 'react';
+import * as React from 'react';
 
 export const useDebounce = ({ value, delay }: {
   value: any,
   delay: number,
 }) => {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-  useEffect(
+  const [debouncedValue, setDebouncedValue] = React.useState(value);
+  React.useEffect(
     () => {
       const handler = setTimeout(() => {
         setDebouncedValue(value);
@@ -32,13 +30,11 @@ const getDebounceInput = (setValue: any) => React.memo(({ onChange, ...props }: 
       onChange(value);
     }
   };
-  return (
-    <input
-      onChange={onChangeWarped}
-      type="text"
-      {...props}
-    />
-  )
+  return React.createElement('input', {
+    onChange: onChangeWarped,
+    type: "text",
+    ...props
+  });
 })
 
 const defaultFilter = (
@@ -66,17 +62,17 @@ export default ({
   const [
     filteredItems, 
     setFilterItems,
-  ] = useState<any>(items);
+  ] = React.useState<any>(items);
 
-  const [value, setValue] = useState<String>();
+  const [value, setValue] = React.useState<String>();
   const debounceValue = useDebounce({
     value,
     delay,
   });
 
-  const DebounceInput = useMemo(() => getDebounceInput(setValue), [])
+  const DebounceInput = React.useMemo(() => getDebounceInput(setValue), [])
 
-  useEffect(() => {
+  React.useEffect(() => {
     const search = (currentItems: any[]) => {
       if (!debounceValue) {
         return currentItems;
@@ -97,7 +93,7 @@ export default ({
     DebounceInput,
     value,
     debounceValue,
-    filteredItems: useMemo(() => filteredItems, [filteredItems]),
-    setInputValue: useCallback(setValue, []),
+    filteredItems: React.useMemo(() => filteredItems, [filteredItems]),
+    setInputValue: React.useCallback(setValue, []),
   }
 };
