@@ -995,28 +995,6 @@ var getDebounceInput = function getDebounceInput(setValue) {
   });
 };
 
-var useDebounceInput = function useDebounceInput(_a) {
-  var delay = _a.delay;
-
-  var _b = React.useState(),
-      value = _b[0],
-      setValue = _b[1];
-
-  var debounceValue = useDebounce({
-    value: value,
-    delay: delay
-  });
-  var DebounceInput = React.useMemo(function () {
-    return getDebounceInput(setValue);
-  }, []);
-  return {
-    DebounceInput: DebounceInput,
-    value: value,
-    debounceValue: debounceValue,
-    setValue: setValue
-  };
-};
-
 var defaultFilter = function defaultFilter(debounceValue, items, filterByColumns) {
   return filter$2(items).call(items, function (item) {
     return find$2(filterByColumns).call(filterByColumns, function (column) {
@@ -1038,14 +1016,17 @@ var index = (function (_a) {
       filteredItems = _c[0],
       setFilterItems = _c[1];
 
-  var _d = useDebounceInput({
-    delay: delay
-  }),
-      DebounceInput = _d.DebounceInput,
-      value = _d.value,
-      debounceValue = _d.debounceValue,
-      setValue = _d.setValue;
+  var _d = React.useState(),
+      value = _d[0],
+      setValue = _d[1];
 
+  var debounceValue = useDebounce({
+    value: value,
+    delay: delay
+  });
+  var DebounceInput = React.useMemo(function () {
+    return getDebounceInput(setValue);
+  }, []);
   React.useEffect(function () {
     var search = function search(currentItems) {
       if (!debounceValue) {

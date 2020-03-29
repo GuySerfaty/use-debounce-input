@@ -1,3 +1,10 @@
 src
 .babelrc
 example
+*.test.*
+.editorconfig
+.env
+.travis.yml
+rollup.config.js
+tsconfig.json
+*.map

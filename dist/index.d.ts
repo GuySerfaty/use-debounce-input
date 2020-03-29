@@ -1,24 +1,18 @@
 import React from 'react';
-interface useDebounceProps {
+export declare const useDebounce: ({ value, delay }: {
     value: any;
     delay: number;
-}
-export declare const useDebounce: ({ value, delay }: useDebounceProps) => any;
-interface UseDebounceInputProps {
-    delay: number;
-}
-interface DebounceInputProps {
-    onChange?: (value: any) => void;
-}
-interface UseDebounceFilterListProps extends UseDebounceInputProps {
+}) => any;
+declare const _default: ({ delay, items, filterByColumns, filter, }: {
     items: any[];
     filterByColumns: string[];
-    processingIndicator?: boolean;
-    filter?: (filteredBy: String, currentItems: any[], filterByColumns: any[]) => void;
+    processingIndicator?: boolean | undefined;
+    filter?: ((filteredBy: String, currentItems: any[], filterByColumns: any[]) => void) | undefined;
     delay: number;
-}
-declare const _default: ({ delay, items, filterByColumns, filter, }: UseDebounceFilterListProps) => {
-    DebounceInput: React.MemoExoticComponent<({ onChange, ...props }: DebounceInputProps) => JSX.Element>;
+}) => {
+    DebounceInput: React.MemoExoticComponent<({ onChange, ...props }: {
+        onChange?: ((value: any) => void) | undefined;
+    }) => JSX.Element>;
     value: String | undefined;
     debounceValue: any;
     filteredItems: any;
